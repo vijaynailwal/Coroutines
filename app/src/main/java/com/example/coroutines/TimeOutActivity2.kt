@@ -7,7 +7,7 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 
-class TimeOut2Activity : AppCompatActivity() {
+class TimeOutActivity2 : AppCompatActivity() {
 
     private val JOB_TIMEOUT = 100L
 

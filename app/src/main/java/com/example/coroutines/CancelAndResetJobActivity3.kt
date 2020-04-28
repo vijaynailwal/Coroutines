@@ -10,7 +10,7 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 
-class CancelAndResetJob3Activity : AppCompatActivity() {
+class CancelAndResetJobActivity3 : AppCompatActivity() {
 
     private val TAG: String = "AppDebug"
 
@@ -85,7 +85,7 @@ class CancelAndResetJob3Activity : AppCompatActivity() {
 
     private fun showToast(text: String) {
         GlobalScope.launch(Main) {
-            Toast.makeText(this@CancelAndResetJob3Activity, text, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@CancelAndResetJobActivity3, text, Toast.LENGTH_SHORT).show()
         }
     }
 

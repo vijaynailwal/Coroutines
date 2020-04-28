@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.system.measureTimeMillis
 
-class ParallelExecution4Activity : AppCompatActivity() {
+class ParallelExecutionActivity4 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +42,10 @@ class ParallelExecution4Activity : AppCompatActivity() {
      * Also see "Deferred, Async, Await" branch for parallel execution
      */
     private suspend fun fakeApiRequest() {
-        withContext(IO) {
+
+        val startTime = System.currentTimeMillis()
+
+        val parentJob = CoroutineScope(IO).launch {
 
             val job1 = launch {
                 val time1 = measureTimeMillis {
@@ -63,7 +66,13 @@ class ParallelExecution4Activity : AppCompatActivity() {
             }
 
         }
+        parentJob.invokeOnCompletion {
+            Log.e("debug :",  ((System.currentTimeMillis() - startTime).toString()))
+        }
+
+
     }
+
 
     private suspend fun getResult1FromApi(): String {
         delay(1000)

@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".RunOnBlockingActivity7"></activity>
         <!--
             TimeOut2Activity
             MainActivity
             CancelAndResetJob3Activity
             ParallelExecution4Activity
+            SequentialBackground5Activity
         -->
-        <activity android:name=".ParallelExecution4Activity">
+        <activity android:name=".SequentialBackgroundActivity5">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
